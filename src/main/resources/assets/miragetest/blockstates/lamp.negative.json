@@ -1,0 +1,34 @@
+{
+	"forge_marker":1,
+	
+	"defaults":{
+		"model":"minecraft:cube_all",
+		"transform":"forge:default-block",
+		"x":0,
+		"y":0,
+		"uvlock":true,
+		"textures":{
+			"all":"miragetest:blocks/lamp_basic/white"
+		}
+	},
+	"variants":{
+		"color":{
+			"white"     :{ "textures":{ "all":"miragetest:blocks/lamp_basic/white"      } },
+			"orange"    :{ "textures":{ "all":"miragetest:blocks/lamp_basic/orange"     } },
+			"magenta"   :{ "textures":{ "all":"miragetest:blocks/lamp_basic/magenta"    } },
+			"light_blue":{ "textures":{ "all":"miragetest:blocks/lamp_basic/light_blue" } },
+			"yellow"    :{ "textures":{ "all":"miragetest:blocks/lamp_basic/yellow"     } },
+			"lime"      :{ "textures":{ "all":"miragetest:blocks/lamp_basic/lime"       } },
+			"pink"      :{ "textures":{ "all":"miragetest:blocks/lamp_basic/pink"       } },
+			"gray"      :{ "textures":{ "all":"miragetest:blocks/lamp_basic/gray"       } },
+			"silver"    :{ "textures":{ "all":"miragetest:blocks/lamp_basic/silver"     } },
+			"cyan"      :{ "textures":{ "all":"miragetest:blocks/lamp_basic/cyan"       } },
+			"purple"    :{ "textures":{ "all":"miragetest:blocks/lamp_basic/purple"     } },
+			"blue"      :{ "textures":{ "all":"miragetest:blocks/lamp_basic/blue"       } },
+			"brown"     :{ "textures":{ "all":"miragetest:blocks/lamp_basic/brown"      } },
+			"green"     :{ "textures":{ "all":"miragetest:blocks/lamp_basic/green"      } },
+			"red"       :{ "textures":{ "all":"miragetest:blocks/lamp_basic/red"        } },
+			"black"     :{ "textures":{ "all":"miragetest:blocks/lamp_basic/black"      } }
+		}
+	}
+}

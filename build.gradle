@@ -1,0 +1,80 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		jcenter()
+		maven {
+			name = "forge";
+			url = "http://files.minecraftforge.net/maven";
+		}
+		maven {
+			name = "sonatype"
+			url = "https://oss.sonatype.org/content/repositories/snapshots/";
+		}
+	}
+	dependencies {
+		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT";
+		//classpath "gradle.plugin.net.minecrell:licenser:0.3";
+	}
+}
+
+//plugins {
+//	id "net.minecrell.licenser" version "0.3";
+//}
+
+
+
+apply plugin: "net.minecraftforge.gradle.forge";
+//apply plugin: "licenser";
+
+group = "com.elytradev";
+archivesBaseName = "MirageTest";
+version = "0.0.1";
+
+sourceCompatibility = 1.8;
+targetCompatibility = 1.8;
+
+repositories {
+	mavenCentral();
+	jcenter();
+	maven {
+		url = "https://repo.elytradev.com";
+	}
+}
+
+dependencies {
+	compile(project(":Mirage")) {
+		exclude group:"gradle.plugin.net.minecrell", module:"licenser";
+	}
+}
+
+minecraft {
+	//version = '1.12.1-14.22.0.2446'
+	version = '1.12.2-14.23.0.2515'
+    //mappings = 'snapshot_20170817'
+    mappings = 'snapshot_20171026'
+
+	runDir = "minecraft"
+}
+
+processResources {
+	// this will ensure that this task is redone when the versions change.
+	inputs.property "version", project.version
+	inputs.property "mcversion", project.minecraft.version
+
+	// replace stuff in mcmod.info, nothing else
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+
+		// replace version and mcversion
+		expand 'version':project.version, 'mcversion':project.minecraft.version
+	}
+
+	// copy everything else, thats not the mcmod.info
+	from(sourceSets.main.resources.srcDirs) {
+		exclude 'mcmod.info'
+	}
+}
+
+if (file('private.gradle').exists()) {
+	apply from: 'private.gradle'
+}

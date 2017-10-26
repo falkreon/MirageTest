@@ -1,0 +1,16 @@
+[
+{
+  "modid": "miragetest",
+  "name": "MirageTest",
+  "description": "Effects and lighting reference implementations.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Falkreon"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
